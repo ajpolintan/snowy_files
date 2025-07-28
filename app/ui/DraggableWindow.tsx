@@ -13,7 +13,7 @@ const DraggableWindow: React.FC<DraggableWindowProps> = ({ onClose, children }) 
 
     return (
         <Draggable nodeRef={nodeRef}> 
-            <div ref={nodeRef} className ="relative flex flex-col border-5 border-purple-500 text-2xl mb-3 bg-black"> 
+            <div ref={nodeRef} className ="relative flex flex-col border-5 border-indigo-800 text-2xl mb-3 bg-indigo-950"> 
                 <button onClick={onClose} className="absolute top-0 right-2 text-red-500">✕</button>
                 { children }
             </div>

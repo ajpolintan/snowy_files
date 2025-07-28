@@ -8,6 +8,7 @@ export default function About() {
                 <h1>
                     Education
                 </h1>
+                <p> Bachelor of Science in Computer Science (Graduated Summa Cum Luade 2025) </p>
                 <h1>
                     My interests!
                 </h1>
