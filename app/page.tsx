@@ -1,6 +1,13 @@
+'use client'
+
 import Image from "next/image";
+import { useState } from "react";
+import DraggableWindow from "./ui/DraggableWindow";
+
 
 export default function Home() {
+  const [showWindow, setShowWindow] = useState(false);
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -50,6 +57,13 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        <button onClick={() => setShowWindow(true)} className="bg-blue-600 hover:bg-blue-700"> the button</button>
+        
+        {showWindow && (
+        <DraggableWindow onClose={() => setShowWindow(false)} />
+        )}
+
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
