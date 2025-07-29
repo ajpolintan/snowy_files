@@ -4,13 +4,21 @@ import Image from "next/image";
 import { useState } from "react";
 import DraggableWindow from "./ui/DraggableWindow";
 import About from "./ui/contents/about";
+import Contact from "./ui/contents/contact";
+import Gallery from "./ui/contents/gallery";
+import Snowfall from "react-snowfall";
+// from https://www.npmjs.com/package/react-snowfall
 
 export default function Home() {
   const [showWindow, setShowWindow] = useState(false);
   const [showLinkWindow, setLinkWindow] = useState(false);
+  const [showContactWindow, setContactWindow] = useState(false);
 
+  
   return (
+
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <Snowfall />
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
        <h1 className="text-4xl"> Hi my name is Jake and welcome to my website :0</h1>
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
@@ -28,31 +36,28 @@ export default function Home() {
           <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full  bg-teal-500 hover:bg-teal-700"> About Me </button>
           <button onClick={() => setLinkWindow(true)} className="rounded-full font-medium h-20 w-full  bg-teal-500 hover:bg-teal-700"> Works </button>
           <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full bg-teal-500 hover:bg-teal-700"> Links </button>
-          <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full bg-teal-500 hover:bg-teal-700"> Contact </button>
+          <button onClick={() => setContactWindow(true)} className="rounded-full font-medium h-20 w-full bg-teal-500 hover:bg-teal-700"> Contact </button>
 
 
         </div>
         <div className="flex">
               {// (Draggable windows for personal website)
               showWindow && (
-                        <DraggableWindow onClose={() => setShowWindow(false)}>
-                            <About />
-                        </DraggableWindow>
+                <DraggableWindow onClose={() => setShowWindow(false)}>
+                      <About />
+                </DraggableWindow>
               )}
 
-                    {showLinkWindow && (
-                        <DraggableWindow onClose={() => setLinkWindow(false)}>
-                              <h1 className="mb-16">thy Link</h1>
+              {showLinkWindow && (
+                <DraggableWindow onClose={() => setLinkWindow(false)}>
+                    <Gallery />
+                </DraggableWindow>
+              )}
 
-                              <h1>My interests!</h1>
-                              <ul className="list-disc">
-                                <li>Dance Dance Revolution</li>
-                                <li>Soulslikes and JRPGs (Final Fantasy :) )</li>
-                                <li>Reading Fantasy and YA Novels</li>
-                                <li>Playing Guitar</li>
-                                <li>JPOP (Yorushika) + KPOP listener (IVE, BTS)</li>
-                              </ul>
-                        </DraggableWindow>
+              { showContactWindow && (
+                <DraggableWindow onClose={() => setContactWindow(false)}>
+                    <Contact />
+                </DraggableWindow>
               )}
           </div>
 
