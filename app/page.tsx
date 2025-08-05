@@ -7,11 +7,15 @@ import About from "./ui/contents/about";
 import Contact from "./ui/contents/contact";
 import Gallery from "./ui/contents/gallery";
 import Snowfall from "react-snowfall";
+import Links from "./ui/contents/links";
+
+
 // from https://www.npmjs.com/package/react-snowfall
 
 export default function Home() {
   const [showWindow, setShowWindow] = useState(false);
   const [showLinkWindow, setLinkWindow] = useState(false);
+  const [showWorksWindow, setWorksWindow] = useState(false);
   const [showContactWindow, setContactWindow] = useState(false);
 
   
@@ -28,7 +32,7 @@ export default function Home() {
 
           <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full  bg-indigo-500 hover:bg-indigo-700"> About Me </button>
           <button onClick={() => setLinkWindow(true)} className="rounded-full font-medium h-20 w-full  bg-indigo-500 hover:bg-indigo-700"> Works </button>
-          <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full bg-indigo-500 hover:bg-indigo-700"> Links </button>
+          <button onClick={() => setWorksWindow(true)} className="rounded-full font-medium h-20 w-full bg-indigo-500 hover:bg-indigo-700"> Links </button>
           <button onClick={() => setContactWindow(true)} className="rounded-full font-medium h-20 w-full bg-indigo-500 hover:bg-indigo-700"> Contact </button>
 
 
@@ -46,6 +50,13 @@ export default function Home() {
                     <Gallery />
                 </DraggableWindow>
               )}
+
+               {showWorksWindow && (
+                <DraggableWindow onClose={() => setWorksWindow(false)}>
+                    <Links />
+                </DraggableWindow>
+              )}
+
 
               { showContactWindow && (
                 <DraggableWindow onClose={() => setContactWindow(false)}>

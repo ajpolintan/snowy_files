@@ -14,7 +14,8 @@
     "react-dom": "19.1.0",
     "react-draggable": "^4.5.0",
     "react-responsive-masonry": "^2.7.1",
-    "react-snowfall": "^2.3.0"
+    "react-snowfall": "^2.3.0",
+    "react-social-icons": "^6.24.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
