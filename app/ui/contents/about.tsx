@@ -1,9 +1,8 @@
 export default function About() {
     return (
-    <div>
+    <div className="px-6 py-6">
 
-    <h1 className=" mb-16 "> 
-                    Hi my name is Allen Jake Polintan
+                <h1 className="mb-16 ">Hi my name is Allen Jake Polintan
                 </h1>
                 <h1 className="text-decoration-line: underline">
                     Education

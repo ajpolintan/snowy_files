@@ -61,7 +61,7 @@ const ImageGallery: NextPage<ImageGalleryPageProps> = ({ images }) => {
 
 const Gallery: NextPage = () => {
     return (
-        <div>
+        <div className="px-6 py-6">
 
             <h1> hey</h1>
             

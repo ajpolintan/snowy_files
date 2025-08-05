@@ -20,7 +20,8 @@
 }
 
 body {
-  background: url('/illustrations/custom-background.jpeg');
+  background: url('/illustrations/website_background2.png');
+  image-rendering: pixelated;
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;

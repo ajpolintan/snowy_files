@@ -17,26 +17,19 @@ export default function Home() {
   
   return (
 
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <Snowfall />
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className=" grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <Snowfall color='#FFB3B3' />
+      <main className="px-6 py-6 flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-indigo-950/75 ">
        <h1 className="text-4xl"> Hi my name is Jake and welcome to my website :0</h1>
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            The Snowy Files{" "}
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
+       <p> Software Developer, Illustrator, Game Dev </p>
+   
         
         <div className="flex items-center flex-col gap-4 sm:flex-row ">
 
-          <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full  bg-teal-500 hover:bg-teal-700"> About Me </button>
-          <button onClick={() => setLinkWindow(true)} className="rounded-full font-medium h-20 w-full  bg-teal-500 hover:bg-teal-700"> Works </button>
-          <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full bg-teal-500 hover:bg-teal-700"> Links </button>
-          <button onClick={() => setContactWindow(true)} className="rounded-full font-medium h-20 w-full bg-teal-500 hover:bg-teal-700"> Contact </button>
+          <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full  bg-indigo-500 hover:bg-indigo-700"> About Me </button>
+          <button onClick={() => setLinkWindow(true)} className="rounded-full font-medium h-20 w-full  bg-indigo-500 hover:bg-indigo-700"> Works </button>
+          <button onClick={() => setShowWindow(true)} className="rounded-full font-medium h-20 w-full bg-indigo-500 hover:bg-indigo-700"> Links </button>
+          <button onClick={() => setContactWindow(true)} className="rounded-full font-medium h-20 w-full bg-indigo-500 hover:bg-indigo-700"> Contact </button>
 
 
         </div>
