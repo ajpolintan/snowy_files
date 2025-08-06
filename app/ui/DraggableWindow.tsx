@@ -12,8 +12,8 @@ const DraggableWindow: React.FC<DraggableWindowProps> = ({ onClose, children }) 
     const nodeRef = useRef(null);
 
     return (
-        <Draggable nodeRef={nodeRef}> 
-            <div ref={nodeRef} className ="relative flex flex-col border-5 border-indigo-800 text-2xl mb-3 bg-indigo-950"> 
+        <Draggable   bounds={{top: -500, left: -500, right: 980, bottom: 205}} nodeRef={nodeRef}> 
+            <div ref={nodeRef} className ="overflow-scroll relative flex flex-col border-5 border-indigo-800 text-2xl mb-3 bg-indigo-950"> 
                 <button onClick={onClose} className="absolute top-0 right-2 text-red-500">✕</button>
                 { children }
             </div>

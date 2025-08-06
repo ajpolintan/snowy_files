@@ -1,79 +1,114 @@
-import type { NextPage } from "next";
 
+'use client'
+
+import { useState } from "react";
 import React from "react";
 import Image from 'next/image'
-import Masonry from "react-responsive-masonry"
-
+import Lightbox from "yet-another-react-lightbox";
+import {
+    RenderImageContext,
+    RenderImageProps,
+    RowsPhotoAlbum,
+    MasonryPhotoAlbum,
+} from "react-photo-album"
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { GetStaticProps } from 'next';
+import { Thumbnails } from "yet-another-react-lightbox/plugins";
 
 //references https://www.fullstackfoundations.com/blog/nextjs-masonry-image-gallery-lightbox
 
-export type ImageEnhanced = {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-};
-
-export type ImageGalleryPageProps = {
-    images: ImageEnhanced[];
-};
-
-// Create an array of images
-const imagesArray: ImageEnhanced[] = [
-  {
-    src: "/illustrations/custom-background.jpeg",
-    alt: "Image 1",
-    width: 1000,
-    height: 800,
-  },
-  {
-    src: "/illustrations/custom-background.jpeg",
-    alt: "Image 2",
-    width: 1200,
-    height: 900,
-  },
-  {
-    src: "/illustrations/connected.jpg",
-    alt: "Image 3",
-    width: 800,
-    height: 2000,
-  },
-];
-
-
-const ImageGallery: NextPage<ImageGalleryPageProps> = ({ images }) => {
+function renderNextImage(
+    { alt = "", title, sizes }: RenderImageProps,
+    { photo, width, height }: RenderImageContext,
+) {
     return (
-        <Masonry>
-            { images.map((image) =>
-                <Image
-                    key={image.src}
-                    className="hover:opacity-80 cursor-pointer my-2"
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    layout="responsive"
-                />)}
-        </Masonry>
+        <div 
+            style ={{
+                width: "100%",
+                position: "relative",
+                aspectRatio: `${width} / ${height}`
+            }}
+        >
+        <Image
+            fill
+            src = {photo}
+            alt = {alt}
+            title = {title}
+            sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder={"blurDataURL" in photo ? "blur" : undefined}
+        />
+        </div>
     )
 }
 
-const Gallery: NextPage = () => {
+// Create an array of images
+const photos = [
+  {
+    src: "/illustrations/clouds2.png",
+    width: 1000,
+    height: 1000,
+    title: 'slide1',
+    description: 'good work'
+  },
+
+  {
+    src: "/illustrations/connected.jpg",
+    width: 1000,
+    height: 1000,
+    title: 'slide1',
+    description: 'good work'
+  },
+   {
+    src: "/illustrations/clouds2-min.png",
+    width: 1000,
+    height: 1000,
+    title: 'slide1',
+    description: 'good work' 
+  },  {
+    src: "/illustrations/website_background2.png",
+    width: 1000,
+    height: 1000,
+    title: 'slide1',
+    description: 'good work'
+  },
+   {
+    src: "/illustrations/website_background2.png",
+    width: 1000,
+    height: 1000,
+    title: 'slide1',
+    description: 'good work'
+  },
+]
+
+export default function Gallery() {
+
+      const [open, setOpen] = useState(false);
     return (
-        <div className="px-6 py-6">
+        
+        <div className=" px-6 py-6 mb-16 overflow-auto">
 
-            <h1> hey</h1>
+       
+                <Image
+                        src="/illustrations/connected.jpg"
+                        width={500}
+                        height={500}
+                        alt="Picture of the author"
+                />
+                <Lightbox
+                    plugins={[Thumbnails]}
+                    open={open}
+                    close={() => setOpen(false)}
+                    slides={photos}
+                />
+            <h6> View All of My Work  </h6>
             
-            <Image src ={"/illustrations/connected.jpg"} 
-            alt="illust"
-            width="500"
-            height="500"/> 
-            <ImageGallery images={imagesArray} />
-
+            <button className=" transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
+                Open Lightbox
+            </button>
         </div>
-
+      
+    
     )
-};
+}
 
-export default Gallery
