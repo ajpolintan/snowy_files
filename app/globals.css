@@ -20,7 +20,7 @@
 }
 
 body {
-  background: url('/illustrations/website_background2.png');
+  background: url('/illustrations/website_background.png');
   image-rendering: pixelated;
   background-size:cover;
   background-position: center;

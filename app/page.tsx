@@ -47,7 +47,7 @@ export default function Home() {
                 </DraggableWindow>
               )}
           </div>
-        <div className="xed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
+        <div className=" w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
 
               {showLinkWindow && (
                 <DraggableWindow onClose={() => setLinkWindow(false)}>
@@ -55,7 +55,7 @@ export default function Home() {
                 </DraggableWindow>
               )}
           </div>
-        <div className="ixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white">
+        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white">
 
                {showWorksWindow && (
                 <DraggableWindow onClose={() => setWorksWindow(false)}>
