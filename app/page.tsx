@@ -25,7 +25,7 @@ export default function Home() {
       <Snowfall color='#FFB3B3' />
       <main className=" relative items-center row-start-2 ">
       <div className="px-6 py-6 flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-indigo-950/75 "> 
-        <h1 className="text-4xl"> Hi my name is Jake and welcome to my website :0</h1>
+        <h1 className="text-4xl"> Hi my name is Jake :)</h1>
         <p> Software Developer, Illustrator, Game Dev </p>
     
           
