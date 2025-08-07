@@ -129,49 +129,91 @@ export default function Gallery() {
     return (
         
         <div className="px-6 py-6 mb-16 overflow-auto">
-            <h1 className="py-4 text-white-400 leading-none tracking-tight mb-8 font-bold text-4xl "> Illustrations </h1>
+              <h1 className="py-4 text-white-400 leading-none tracking-tight mb-8 font-bold text-4xl "> Illustrations </h1>
 
+          <div className="mb-4 flex items-center">
+                  <Image
+                          src="/illustrations/connected.jpg"
+                          width={500}
+                          height={500}
+                          alt="Picture of the author"
+                  />
+                  <Lightbox className="overflow-hidden"
+                      plugins={[Thumbnails]}
+                      open={open}
+                      close={() => setOpen(false)}
+                      slides={photos}
+                  />
+              <h6 className='ml-4'> View All of My Work 
+                <button className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
+                    Open Lightbox
+                </button>  
+              </h6>
+              
+            </div>
+            <h1 className="mb-4" > Bloom Hackathon </h1>
+            <div className="mb-4 flex items-center">
                 <Image
-                        src="/illustrations/connected.jpg"
+                src="/thumbnails/cottage_slower.gif"
+                width={500}
+                height={500}
+                alt="Picture of the author"
+                />
+                <div className="ml-4"> 
+                  <p> Animated the footer for BLOOM, a three day long hackathon at the University of San Francisco </p>
+                  <a href="https://bloom.build/" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here </a>
+
+                </div>
+
+            </div>
+            
+            <h1 className="mt-8 py-4  leading-none tracking-tight font-extrabold mb-4 text-4xl"> Development </h1>
+            
+            <div className="">
+                <h1 className="mb-4" > JumpLoop Game </h1>
+                <div className="mb-4 flex items-center">
+
+                    <Image
+                        className="mb-4"
+                        src="/thumbnails/jumploop.png"
                         width={500}
                         height={500}
                         alt="Picture of the author"
-                />
+                    />
+                    <div className="ml-4">
+                      <p className="mb-6"> Co-developed a Roguelike Platformer in the GMTK Game Jam! Produced the art of the game using Aesprite and used the Godot Game Engine                 </p>
+                      <a href="https://jakepolintanart.itch.io/jumploop" className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> Play Now </a>
+                    </div>
+                </div>
 
-                <Lightbox className="overflow-hidden"
-                    plugins={[Thumbnails]}
-                    open={open}
-                    close={() => setOpen(false)}
-                    slides={photos}
-                />
-            <h6> View All of My Work  </h6>
-            
-            <button className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
-                Open Lightbox
-            </button>
-            
-            <h1 className="mt-8 py-4  leading-none tracking-tight font-extrabold mb-4 text-4xl"> Development </h1>
-            <div className="">
-                <h1 className="mb-4" > Game </h1>
-                <Image
-                    className="mb-4"
-                    src="/thumbnails/jumploop.png"
-                    width={500}
-                    height={500}
-                    alt="Picture of the author"
-                />
-                <p className="mb-6"> Co-developed a Roguelike Platformer in the GMTK Game Jam! Produced the art of the game using Aesprite and used the Godot Game Engine</p>
-                <a href="https://jakepolintanart.itch.io/jumploop" className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> Play Now </a>
-                <h1  className="mt-6 mb-4"> Data Visualization </h1>
-
+                  <h1 className="mt-6 mb-4"> Mental Health Data Visualization </h1>
+                <div className="mb-4 flex items-center"> 
                   <Image
-                    src="/thumbnails/mental_health.png"
-                    width={500}
-                    height={500}
-                    alt="Picture of the author"
-                />
-                <p className="mb-6">Created an interactive data visualization site using D3.js to highlight male mental health trends, including an interactive map of crisis centers across the U.S., and dynamic line/bar charts to drive awareness </p>
-                <a href="https://jakepolintanart.itch.io/jumploop" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here </a>
+                      src="/thumbnails/mental_health.png"
+                      width={500}
+                      height={500}
+                      alt="Picture of the author"
+                  />
+                  <div className="ml-4"> 
+                      <p className="mb-6">Created an interactive data visualization site using D3.js to highlight male mental health trends, including an interactive map of crisis centers across the U.S., and dynamic line/bar charts to drive awareness </p>
+                      <a href="https://ajpolintan.github.io/MentalHealthViz/" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here </a>
+                  </div>
+                
+                </div>
+                <h1 className="mb-4" > Viper (FAQ Discord Bot) </h1>
+                <div className="mb-4 flex items-center">
+                      <Image
+                      src="/thumbnails/discord_bot.png"
+                      width={500}
+                      height={500}
+                      alt="Picture of the author"
+                      />
+                      
+                      <div className="ml-4"> 
+                      <p className="mb-6">Worked in a team of 4 for a Hackathon to develop a bot in Python that tracks the message history of a chat and displays the most frequent answers in an embed using the Discord API, TinyDb, and Yake </p>
+                      <a href="https://viper-deploy2023.github.io/" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here </a>
+                  </div>
+                </div>
             </div>
 
         </div>
