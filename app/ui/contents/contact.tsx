@@ -4,6 +4,7 @@ export default function Contact() {
             <h1 className="text-center mb-16 "> 
                             Hi please contact me with the email jakepolintanart@gmail.com
             </h1>
+            <a className='mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600' href="mailto:jakepolintanart@gmail.com"> Email Me !</a>
         </div>
     )
 }

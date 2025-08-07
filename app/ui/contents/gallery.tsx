@@ -125,11 +125,11 @@ const photos = [
 
 export default function Gallery() {
 
-      const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     return (
         
-        <div className=" px-6 py-6 mb-16 overflow-auto">
-            <h1> Illustrations  </h1>
+        <div className="px-6 py-6 mb-16 overflow-auto">
+            <h1 className="py-4 text-white-400 leading-none tracking-tight mb-8 font-bold text-4xl "> Illustrations </h1>
 
                 <Image
                         src="/illustrations/connected.jpg"
@@ -138,7 +138,7 @@ export default function Gallery() {
                         alt="Picture of the author"
                 />
 
-                <Lightbox
+                <Lightbox className="overflow-hidden"
                     plugins={[Thumbnails]}
                     open={open}
                     close={() => setOpen(false)}
@@ -146,22 +146,23 @@ export default function Gallery() {
                 />
             <h6> View All of My Work  </h6>
             
-            <button className=" transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
+            <button className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
                 Open Lightbox
             </button>
             
-            <h1 className="py-10"> Development </h1>
+            <h1 className="mt-8 py-4  leading-none tracking-tight font-extrabold mb-4 text-4xl"> Development </h1>
             <div className="">
-                <h1> Game </h1>
+                <h1 className="mb-4" > Game </h1>
                 <Image
+                    className="mb-4"
                     src="/thumbnails/jumploop.png"
                     width={500}
                     height={500}
                     alt="Picture of the author"
                 />
-                <h1> Co-developed a Roguelike Platformer in the GMTK Game Jam! Produced the art of the game using Aesprite and used the Godot Game Engine</h1>
-                <a href="https://jakepolintanart.itch.io/jumploop" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> Play Now</a>
-                <h1> Data Visualzatiion </h1>
+                <p className="mb-6"> Co-developed a Roguelike Platformer in the GMTK Game Jam! Produced the art of the game using Aesprite and used the Godot Game Engine</p>
+                <a href="https://jakepolintanart.itch.io/jumploop" className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> Play Now </a>
+                <h1  className="mt-6 mb-4"> Data Visualization </h1>
 
                   <Image
                     src="/thumbnails/mental_health.png"
@@ -169,8 +170,8 @@ export default function Gallery() {
                     height={500}
                     alt="Picture of the author"
                 />
-                <h1>Created an interactive data visualization site using D3.js to highlight male mental health trends, including an interactive map of crisis centers across the U.S., and dynamic line/bar charts to drive awareness </h1>
-                <a href="https://jakepolintanart.itch.io/jumploop" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here</a>
+                <p className="mb-6">Created an interactive data visualization site using D3.js to highlight male mental health trends, including an interactive map of crisis centers across the U.S., and dynamic line/bar charts to drive awareness </p>
+                <a href="https://jakepolintanart.itch.io/jumploop" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here </a>
             </div>
 
         </div>

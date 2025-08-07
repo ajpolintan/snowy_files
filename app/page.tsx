@@ -21,7 +21,7 @@ export default function Home() {
   
   return (
 
-    <div className=" grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <Snowfall color='#FFB3B3' />
       <main className=" relative items-center row-start-2 ">
       <div className="px-6 py-6 flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-indigo-950/75 "> 
@@ -42,32 +42,32 @@ export default function Home() {
         <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
               {// (Draggable windows for personal website)
               showWindow && (
-                <DraggableWindow onClose={() => setShowWindow(false)}>
+                <DraggableWindow window="about me" onClose={() => setShowWindow(false)}>
                       <About />
                 </DraggableWindow>
               )}
           </div>
-        <div className=" w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
+        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-250 hover:h-50 top-5 text-white ">
 
               {showLinkWindow && (
-                <DraggableWindow onClose={() => setLinkWindow(false)}>
+                <DraggableWindow window="works" onClose={() => setLinkWindow(false)}>
                     <Gallery />
                 </DraggableWindow>
               )}
           </div>
-        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white">
+        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-30 left-110 text-white">
 
                {showWorksWindow && (
-                <DraggableWindow onClose={() => setWorksWindow(false)}>
+                <DraggableWindow window="links" onClose={() => setWorksWindow(false)}>
                     <Links />
                 </DraggableWindow>
               )}
           </div>
-        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
+        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 top-30 left-175 text-white ">
 
 
               { showContactWindow && (
-                <DraggableWindow onClose={() => setContactWindow(false)}>
+                <DraggableWindow window="contact" onClose={() => setContactWindow(false)}>
                     <Contact />
                 </DraggableWindow>
               )}
