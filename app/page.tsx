@@ -26,7 +26,8 @@ export default function Home() {
       <main className=" relative items-center row-start-2 ">
       <div className="px-6 py-6 flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-indigo-950/75 "> 
         <h1 className="text-4xl"> Hi my name is Jake :)</h1>
-        <p> Software Developer, Illustrator, Game Dev (website design inspired by shar's desktop)  </p>
+        <p> Software Developer, Illustrator, Game Dev <p className="text-gray-400"> (website inspired by shars desktop)  </p> </p>
+    
           
           <div className="flex items-center flex-col transition-all duration-300 ease-in-out gap-4 hover:gap-6 sm:flex-row ">
 
