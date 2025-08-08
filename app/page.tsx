@@ -1,5 +1,6 @@
 'use client'
 
+import { useIsMobile } from "./hooks/mobile";
 import { useEffect } from "react";
 import Image from "next/image";
 import { useState } from "react";
@@ -13,26 +14,7 @@ import Links from "./ui/contents/links";
 import Head from 'next/head'
 // from https://www.npmjs.com/package/react-snowfall
 
-export function useIsMobile(): boolean {
-  const [isMobile, setIsMobile] = useState(false);
 
-
-  useEffect(() => {
-    // listener  
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    setIsMobile(mediaQuery.matches)
-
-    const handler = (event : MediaQueryListEvent) => {setIsMobile(event.matches)}
-   
-    
-    mediaQuery.addEventListener('change',handler)
-
-    return () => mediaQuery.removeEventListener('change', handler)
-
-  }, [] )
-  return isMobile
-}
 
 export default function Home() {
   const [showWindow, setShowWindow] = useState(false);
