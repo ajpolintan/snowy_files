@@ -44,10 +44,10 @@ export default function Home() {
 
           </div>
         </div>
-        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
-              
+
+        <div> 
               {isMobile ? 
-              <div>
+              <div className="fixed top-40 left-0 right-0 text-center transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
                   {// (Draggable windows for personal website)
                       showWindow && (
                         <MobileWindow window="about me" onClose={() => setShowWindow(false)}>
@@ -56,7 +56,7 @@ export default function Home() {
                   )}
               </div>
                 :
-                <div>
+                <div  className="fixed w-100 h-2  transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
                     {// (Draggable windows for personal website)
                       showWindow && (
                         <DraggableWindow window="about me" onClose={() => setShowWindow(false)}>
@@ -67,30 +67,71 @@ export default function Home() {
               }
              
           </div>
-        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-250 hover:h-50 top-5 text-white ">
-
-              {showLinkWindow && (
-                <DraggableWindow window="works" onClose={() => setLinkWindow(false)}>
-                    <Gallery />
-                </DraggableWindow>
-              )}
+        <div>
+              {isMobile ? 
+              <div className="fixed top-40  right-0 left-0 text-center transition-all duration-300 ease-in-out hover:w-250 hover:h-50 top-5 text-white " >
+                  {// (Draggable windows for personal website)
+                      showLinkWindow && (
+                        <MobileWindow window="works" onClose={() => setLinkWindow(false)}>
+                              <Gallery />
+                        </MobileWindow>
+                  )}
+              </div>
+                :
+                <div  className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-250 hover:h-50 top-5 text-white">
+                    {// (Draggable windows for personal website)
+                      showLinkWindow && (
+                        <DraggableWindow window="works" onClose={() => setLinkWindow(false)}>
+                              <Gallery />
+                        </DraggableWindow>
+                      )}   
+                </div> 
+              }
           </div>
-        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-30 left-110 text-white">
+        <div>
 
-               {showWorksWindow && (
-                <DraggableWindow window="links" onClose={() => setWorksWindow(false)}>
-                    <Links />
-                </DraggableWindow>
-              )}
+              {isMobile ? 
+              <div className="fixed top-112 left-0 right-0 text-center  transition-all duration-300 ease-in-out hover:w-150 hover:h-50 text-white">
+                  {// (Draggable windows for personal website)
+                      showWorksWindow && (
+                        <MobileWindow window="links" onClose={() => setWorksWindow(false)}>
+                              <Links />
+                        </MobileWindow>
+                  )}
+              </div>
+                :
+                <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-30 left-110 text-white">
+                    {// (Draggable windows for personal website)
+                      showWorksWindow && (
+                        <DraggableWindow window="links" onClose={() => setWorksWindow(false)}>
+                              <Links />
+                        </DraggableWindow>
+                      )}   
+                </div> 
+              }
           </div>
-        <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 top-30 left-175 text-white ">
+        <div className=" ">
 
 
-              { showContactWindow && (
-                <DraggableWindow window="contact" onClose={() => setContactWindow(false)}>
-                    <Contact />
-                </DraggableWindow>
-              )}
+              {isMobile ? 
+              <div className="fixed top-108 left-0 right-0 text-center transition-all duration-300 ease-in-out hover:w-150 hover:h-50 text-white">
+                  {// (Draggable windows for personal website)
+                      showContactWindow && (
+                        <MobileWindow window="contact" onClose={() => setContactWindow(false)}>
+                              <Contact />
+                        </MobileWindow>
+                  )}
+              </div>
+                :
+                <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 top-30 left-175 text-white">
+                    {// (Draggable windows for personal website)
+                      showContactWindow && (
+                        <DraggableWindow window="contact" onClose={() => setContactWindow(false)}>
+                              <Contact />
+                        </DraggableWindow>
+                      )}   
+                </div> 
+              }
           </div>
 
       </main>

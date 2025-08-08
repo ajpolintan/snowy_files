@@ -131,7 +131,7 @@ export default function Gallery() {
         <div className="px-6 py-6 mb-16 overflow-auto">
               <h1 className="py-4 text-white-400 leading-none tracking-tight mb-8 font-bold text-4xl "> Illustrations </h1>
 
-          <div className="mb-4 flex items-center">
+          <div className="mb-4 flex flex-col md:flex-row items-center ">
                   <Image
                           src="/illustrations/connected.jpg"
                           width={500}
@@ -152,12 +152,13 @@ export default function Gallery() {
               
             </div>
             <h1 className="mb-4" > Bloom Hackathon </h1>
-            <div className="mb-4 flex items-center">
+            <div className="mb-4 flex flex-col md:flex-row items-center">
                 <Image
                 src="/thumbnails/cottage_slower.gif"
                 width={500}
                 height={500}
                 alt="Picture of the author"
+                unoptimized
                 />
                 <div className="ml-4"> 
                   <p> Animated the footer for BLOOM, a three day long hackathon at the University of San Francisco </p>
@@ -167,11 +168,11 @@ export default function Gallery() {
 
             </div>
             
-            <h1 className="mt-8 py-4  leading-none tracking-tight font-extrabold mb-4 text-4xl"> Development </h1>
+            <h1 className="mt-8 py-4 leading-none tracking-tight font-extrabold mb-4 text-4xl"> Development </h1>
             
             <div className="">
                 <h1 className="mb-4" > JumpLoop Game </h1>
-                <div className="mb-4 flex items-center">
+                <div className="mb-4 flex flex-col md:flex-row items-center">
 
                     <Image
                         className="mb-4"
@@ -187,7 +188,7 @@ export default function Gallery() {
                 </div>
 
                   <h1 className="mt-6 mb-4"> Mental Health Data Visualization </h1>
-                <div className="mb-4 flex items-center"> 
+                <div className="mb-4 flex flex-col md:flex-row items-center"> 
                   <Image
                       src="/thumbnails/mental_health.png"
                       width={500}
@@ -201,7 +202,7 @@ export default function Gallery() {
                 
                 </div>
                 <h1 className="mb-4" > Viper (FAQ Discord Bot) </h1>
-                <div className="mb-4 flex items-center">
+                <div className="mb-4 flex flex-col md:flex-row items-center">
                       <Image
                       src="/thumbnails/discord_bot.png"
                       width={500}
