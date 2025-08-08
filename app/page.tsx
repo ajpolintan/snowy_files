@@ -1,22 +1,45 @@
 'use client'
 
+import { useEffect } from "react";
 import Image from "next/image";
 import { useState } from "react";
-import DraggableWindow from "./ui/DraggableWindow";
+import DraggableWindow from "./ui/DraggableWindow copy";
+import MobileWindow from "./ui/MobileWindow";
 import About from "./ui/contents/about";
-import Contact from "./ui/contents/contact";
+import Contact from "./ui/contents/contact"; 
 import Gallery from "./ui/contents/gallery";
 import Snowfall from "react-snowfall";
 import Links from "./ui/contents/links";
 import Head from 'next/head'
 // from https://www.npmjs.com/package/react-snowfall
 
+export function useIsMobile(): boolean {
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  useEffect(() => {
+    // listener  
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    setIsMobile(mediaQuery.matches)
+
+    const handler = (event : MediaQueryListEvent) => {setIsMobile(event.matches)}
+   
+    
+    mediaQuery.addEventListener('change',handler)
+
+    return () => mediaQuery.removeEventListener('change', handler)
+
+  }, [] )
+  return isMobile
+}
+
 export default function Home() {
   const [showWindow, setShowWindow] = useState(false);
   const [showLinkWindow, setLinkWindow] = useState(false);
   const [showWorksWindow, setWorksWindow] = useState(false);
   const [showContactWindow, setContactWindow] = useState(false);
-
+  const isMobile = useIsMobile();
   
   return (
 
@@ -40,12 +63,27 @@ export default function Home() {
           </div>
         </div>
         <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 text-white ">
-              {// (Draggable windows for personal website)
-              showWindow && (
-                <DraggableWindow window="about me" onClose={() => setShowWindow(false)}>
-                      <About />
-                </DraggableWindow>
-              )}
+              
+              {isMobile ? 
+              <div>
+                  {// (Draggable windows for personal website)
+                      showWindow && (
+                        <MobileWindow window="about me" onClose={() => setShowWindow(false)}>
+                              <About />
+                        </MobileWindow>
+                  )}
+              </div>
+                :
+                <div>
+                    {// (Draggable windows for personal website)
+                      showWindow && (
+                        <DraggableWindow window="about me" onClose={() => setShowWindow(false)}>
+                              <About />
+                        </DraggableWindow>
+                      )}   
+                </div> 
+              }
+             
           </div>
         <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-250 hover:h-50 top-5 text-white ">
 
