@@ -80,7 +80,7 @@ const photos = [
     description: 'good work'
   },
     {
-    src: "/illustrations/mother3.png",
+    src: "/illustrations/Mother3.png",
     width: 1000,
     height: 1000,
     title: 'slide1',
