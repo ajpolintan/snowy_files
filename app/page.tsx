@@ -8,8 +8,7 @@ import Contact from "./ui/contents/contact";
 import Gallery from "./ui/contents/gallery";
 import Snowfall from "react-snowfall";
 import Links from "./ui/contents/links";
-
-
+import Head from 'next/head'
 // from https://www.npmjs.com/package/react-snowfall
 
 export default function Home() {
@@ -22,11 +21,12 @@ export default function Home() {
   return (
 
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      
       <Snowfall color='#FFB3B3' />
       <main className=" relative items-center row-start-2 ">
       <div className="px-6 py-6 flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-indigo-950/75 "> 
         <h1 className="text-4xl"> Hi my name is Jake :)</h1>
-        <p> Software Developer, Illustrator, Game Dev <p className="text-pink-400"> (website inspired by shars desktop)  </p> </p>
+        <p> Software Developer, Illustrator, Game Dev <span className="text-pink-400"> (website inspired by shars desktop)  </span> </p>
     
           
           <div className="flex items-center flex-col transition-all duration-300 ease-in-out gap-4 hover:gap-6 sm:flex-row ">

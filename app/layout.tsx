@@ -21,6 +21,9 @@ const silkScreen = Silkscreen({
 export const metadata: Metadata = {
   title: "Snowy-Files",
   description: "Personal Portfolio",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body
         className={` ${silkScreen.variable} ${silkScreen.variable} antialiased`}
       >
