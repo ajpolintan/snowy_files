@@ -31,15 +31,15 @@ export default function Home() {
       <main className=" relative items-center row-start-2 ">
       <div className="px-6 py-6 flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-indigo-950/75 "> 
         <h1 className="text-4xl"> Hi my name is Jake :)</h1>
-        <p> Software Developer, Illustrator, Game Dev <span className="text-pink-400"> (website inspired by shars desktop)  </span> </p>
+        <h2> Software Developer, Illustrator, Game Dev <span className="text-pink-400"> (website inspired by shars desktop)  </span> </h2>
     
           
           <div className="flex items-center flex-col transition-all duration-300 ease-in-out gap-4 hover:gap-6 sm:flex-row ">
 
-            <button onClick={() => setShowWindow(true)} className="py-1.5 px-2.5 transition-all duration-300 ease-in-out  font-medium h-20 w-20 w-full bg-indigo-500    hover:bg-indigo-700"> About Me </button>
-            <button onClick={() => setLinkWindow(true)} className="py-1.5 px-2.5  transition-all duration-300 ease-in-out font-medium h-20 w-full  bg-indigo-500     hover:bg-indigo-700"> Works </button>
-            <button onClick={() => setWorksWindow(true)} className=" py-1.5 px-2.5 transition-all duration-300 ease-in-out font-medium h-20 w-full bg-indigo-500     hover:bg-indigo-700"> Links </button>
-            <button onClick={() => setContactWindow(true)} className=" py-1.5 px-2.5 transition-all duration-300 ease-in-out font-medium h-20 w-full bg-indigo-500   hover:bg-indigo-700"> Contact </button>
+            <button onClick={() => setShowWindow(true)} className="py-1.5 px-2.5  transition-all duration-300 ease-in-out font-medium h-18 w-full  bg-indigo-500 hover:bg-indigo-700"> About Me </button>
+            <button onClick={() => setLinkWindow(true)} className="py-1.5 px-2.5  transition-all duration-300 ease-in-out font-medium h-18 w-full  bg-indigo-500 hover:bg-indigo-700"> Works </button>
+            <button onClick={() => setWorksWindow(true)} className=" py-1.5 px-2.5 transition-all duration-300 ease-in-out font-medium h-18 w-full bg-indigo-500 hover:bg-indigo-700"> Links </button>
+            <button onClick={() => setContactWindow(true)} className=" py-1.5 px-2.5 transition-all duration-300 ease-in-out font-medium h-18 w-full bg-indigo-500 hover:bg-indigo-700"> Contact </button>
 
 
           </div>
@@ -123,7 +123,7 @@ export default function Home() {
                   )}
               </div>
                 :
-                <div className="fixed w-100 h-2 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-5 top-30 left-175 text-white">
+                <div className="fixed w-100 transition-all duration-300 ease-in-out hover:w-150 hover:h-50 top-30 left-175 text-white">
                     {// (Draggable windows for personal website)
                       showContactWindow && (
                         <DraggableWindow window="contact" onClose={() => setContactWindow(false)}>

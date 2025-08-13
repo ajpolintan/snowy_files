@@ -129,7 +129,7 @@ export default function Gallery() {
     return (
         
         <div className="px-6 py-6 mb-16 overflow-auto">
-              <h1 className="py-4 text-white-400 leading-none tracking-tight mb-8 font-bold text-4xl "> Illustrations </h1>
+          <h1 className="py-4 text-white-400 leading-none tracking-tight mb-8 font-bold text-4xl "> Illustrations </h1>
 
           <div className="mb-4 flex flex-col md:flex-row items-center ">
                   <Image
@@ -144,11 +144,11 @@ export default function Gallery() {
                       close={() => setOpen(false)}
                       slides={photos}
                   />
-              <h6 className='ml-4'> View All of My Work 
-                <button className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
+              <p className='ml-8'> View All of My Work 
+                <button className="mt-4 mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600" type="button" onClick={() => setOpen(true)}>
                     Open Lightbox
                 </button>  
-              </h6>
+              </p>
               
             </div>
             <h1 className="mb-4" > Bloom Hackathon </h1>
@@ -160,8 +160,8 @@ export default function Gallery() {
                 alt="Picture of the author"
                 unoptimized
                 />
-                <div className="ml-4"> 
-                  <p> Animated the footer for BLOOM, a three day long hackathon at the University of San Francisco </p>
+                <div className="ml-4 "> 
+                  <p className="mb-8 "> Animated the footer for BLOOM, a three day long hackathon at the University of San Francisco </p>
                   <a href="https://bloom.build/" className="transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> View Here </a>
 
                 </div>
@@ -182,7 +182,7 @@ export default function Gallery() {
                         alt="Picture of the author"
                     />
                     <div className="ml-4">
-                      <p className="mb-6"> Co-developed a Roguelike Platformer in the GMTK Game Jam! Produced the art of the game using Aesprite and used the Godot Game Engine                 </p>
+                      <p className="mb-8"> Co-developed a Roguelike Platformer in the GMTK Game Jam! Produced the art of the game using Aesprite and used the Godot Game Engine                 </p>
                       <a href="https://jakepolintanart.itch.io/jumploop" className="mb-4 transition-color duration-200 bg-indigo-500 hover:bg-indigo-600"> Play Now </a>
                     </div>
                 </div>

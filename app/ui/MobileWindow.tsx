@@ -12,8 +12,6 @@ const MobileWindow: React.FC<MobileWindowProps> = ({ window, onClose, children }
     const nodeRef = useRef(null);
 
     return (
-        
-            
             <div ref={nodeRef} className =" max-h-[80vh] overflow-scroll relative flex flex-col border-5 border-indigo-800 text-2xl mb-3 bg-indigo-950"> 
                 <div className="bg-indigo-800">
                     <h1>{window}</h1>

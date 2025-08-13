@@ -12,7 +12,7 @@ export default function About() {
                                         height={300}
                                         alt="Picture of the author"
                     />
-                    <h1 className="mb-16 font-bold text-3xl">Allen Jake Polintan  </h1>
+                    <h1 className="my-silkscreen mb-16 font-bold text-3xl">Allen Jake Polintan  </h1>
                 
                 </div>
                 <p className =" mb-5"> Hi my name is Jake and I am a software developer/illustrator based in San Francisco.
@@ -22,7 +22,7 @@ export default function About() {
                     Education
                 </h1>
 
-                <p className =" mb-5"> Bachelor of Science in Computer Science (Graduated Summa Cum Luade 2025) </p>
+                <p className =" mb-5"> Bachelor of Science in Computer Science (Graduated Summa Cum Luade) </p>
                 <h1 className="text-decoration-line: underline font-bold text-3xl">
                     My interests!
                 </h1>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Silkscreen } from "next/font/google";
+import { Geist, Geist_Mono, Silkscreen, Pixelify_Sans  } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,6 +18,13 @@ const silkScreen = Silkscreen({
   variable: "--font-silkscreen"
 })
 
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'],
+  weight: ['400','700'],
+  variable: "--font-pixelify-sans"
+})
+
+
 export const metadata: Metadata = {
   title: "Snowy-Files",
   description: "Personal Portfolio",
@@ -35,7 +42,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body
-        className={` ${silkScreen.variable} ${silkScreen.variable} antialiased`}
+        className={` ${pixelifySans.variable} ${silkScreen.variable} antialiased`}
       >
         {children}
       </body>
